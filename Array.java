@@ -1,31 +1,36 @@
 import java.util.Scanner;
 public class Array 
 {
-	static int i,j,cal,size=5;
-	static int num[]=new int[size];  //Array
+	static int i,j,cal,size;
 	public static void main(String[] args) 
-	{
-		accept();
-		greater();
-		smallest();
-		ascending();
-		descending();
-		
-	}
-	public static void accept()
 	{
 		Scanner sc=new Scanner(System.in);
 		
 		System.out.println("Enter array size: ");
 		size=sc.nextInt();
-		
+		int num[]=new int[size];
 		//Accept numbers in array
 		System.out.println("Enter number: ");
 		for(i=0;i<size;i++)
 			num[i]=sc.nextInt();
+		System.out.println();
+		display(num);
+		greater(num);
+		smallest(num);
+		ascending(num);
+		descending(num);
 		
 	}
-	public static void ascending()
+	public static void display(int num[])
+	{
+		System.out.println("The numbers are: ");
+		for(i=0;i<size;i++)
+		{
+			System.out.print("\t"+num[i]);
+		}
+		System.out.println();
+	}
+	public static void ascending(int num[])
 	{
 		int temp;
 		for(i=0;i<size;i++)
@@ -45,7 +50,7 @@ public class Array
 			System.out.print("\t"+num[i]);
 		System.out.println();
 	}
-	public static void descending()
+	public static void descending(int num[])
 	{
 		int temp;
 		for(i=0;i<size;i++)
@@ -65,7 +70,7 @@ public class Array
 			System.out.print("\t"+num[i]);
 		System.out.println();
 	}
-	public static void smallest()
+	public static void smallest(int num[])
 	{
 		cal=num[0];
 		for(i=0;i<size;i++)
@@ -76,14 +81,11 @@ public class Array
 		
 		System.out.println("Smallest number is: "+cal);
 	}
-	public static void greater()
+	public static void greater(int num[])
 	{
 		cal=num[0];
-		//Display Array
-		System.out.println("The numbers are: ");
 		for(i=0;i<size;i++)
 		{
-			System.out.print("\t"+num[i]);
 			if(num[i]>cal)
 				cal=num[i];
 		}
